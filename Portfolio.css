@@ -1,0 +1,36 @@
+body {
+  background-color: #ffffff; 
+}
+
+header {
+    text-align: center;
+    background-color: #ff9090;
+    padding: 2px;
+    font-size: 25px; 
+    font-weight: bold;
+    color: rgb(255, 255, 255);
+  }
+  img {
+    max-width: 200px;
+    border-radius: 40%;
+    margin: 50px;
+    border: 2px solid rgb(255, 159, 159); 
+    display: block; 
+    margin: 50px auto;
+  }
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .personal {
+    background-color: #ffffff; 
+    border: 3px solid #f38e8e;
+    padding: 10px;
+    margin: 10px 0;
+  }
+
+  

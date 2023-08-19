@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.3/chart.min.js" integrity="sha512-fMPPLjF/Xr7Ga0679WgtqoSyfUoQgdt8IIxJymStR5zV3Fyb6B3u/8DcaZ6R6sXexk5Z64bCgo2TYyn760EdcQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="Portfolio.css"/>
+</head>
+<body>
+    <header>
+        <h1>Portfolio</h1>
+    </header>
+    <div class="container">
+        <img src="/image/P.jpg" alt="profile">
+        <h2>Witchuda Tongkon</h2>
+    </div>
+    <div class="personal">
+        <h2>ข้อมูลส่วนตัว</h2>
+        <h>ชื่อ วิชชุดา ทองก้อน </h><br>
+        <h>ชื่อเล่น ฝ้าย</h><br>
+        <h>อายุ 19 ปี</h><br>
+        <h>กิจวัตรประจําวัน คือ ฟังเพลง ทำอาหาร เล่นเกม ทำงาน</h><br>
+        <h>ความชอบ ช้อปปิ้ง เล่นกับสุนัข เล่นกับแมว เที่ยว</h>
+    </div>
+    <div style="width: 50%; margin: 0 auto;">
+        <canvas id="barChart" width="400" height="200"></canvas>
+    </div>
+    <div style="width: 50%; margin: 0 auto;">
+        <canvas id="pieChart" width="400" height="400"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const labelsBar = ["ฟังเพลง", "ทำอาหาร", "เล่นเกม", "ทำงาน", "เล่นกับสุนัข", "เล่นกับแมว", "เที่ยว"];
+        const dataBar = {
+            labels: labelsBar,
+            datasets: [{
+                label: 'สิ่งที่ชอบทำ',
+                data: [80, 60, 70, 68, 50, 45, 70],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 205, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 159, 64)',
+                    'rgb(255, 205, 86)',
+                    'rgb(75, 192, 192)',
+                    'rgb(54, 162, 235)',
+                    'rgb(153, 102, 255)',
+                    'rgb(201, 203, 207)'
+                ],
+                borderWidth: 1
+            }]
+        };
+        var ctxBar = document.getElementById('barChart').getContext('2d');
+        var barChart = new Chart(ctxBar, {
+            type: 'bar',
+            data: dataBar
+        });
+
+        const labelsPie = ['กิน', 'นอน', 'เที่ยว'];
+        const dataPie = {
+            labels: labelsPie,
+            datasets: [{
+                label: 'living my life',
+                data: [60, 80, 50],
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(54, 162, 235)',
+                    'rgb(255, 205, 86)'
+                ],
+                hoverOffset: 4
+            }]
+        };
+        var ctxPie = document.getElementById('pieChart').getContext('2d');
+        var pieChart = new Chart(ctxPie, {
+            type: 'pie',
+            data: dataPie
+        });
+    </script>
+    <canvas id="myChart"></canvas>
+
+</body>
+</html>
